@@ -3,13 +3,11 @@
     <div class="inner-main">
         <button type="button" class="btn btn-success" v-on:click="say('hi')">+</button>  
 
-        <ul class="inner-ul" v-for="elem in nodes">
-          <li is="li-item" class="li" v-bind:elem="elem" 
+        <ul class="inner-ul">
+          <li is="li-item" v-for="elem in nodes" class="li" v-bind:elem="elem" 
                   v-on:handleToLoad="handleToLoad(elem)"></li>
 
-          <ul class="inner-ul" v-if="(elem.children && elem.children.length > 0)">
-            <li is="li-item" class="li" v-for="el in elem.children" v-bind:elem="el" v-on:handleToLoad="handleToLoad(elem)"></li>
-          </ul> 
+          
         </ul>   
     </div>
   </div>
